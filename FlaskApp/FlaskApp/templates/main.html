@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{%block nevigation%}
+	{% include "nevigation.html" %}
+{%endblock%}
+
+
+{%block content%}
+	<div class="row col-md-9 content">
+    {% if username!=None %}    
+        <div><a href="{{url_for('AddItemForm')}}">Add Item</a></div>
+    {% endif %}        
+	<h3 >Latest Items </h3>	
+		{% for i in item %}			
+			<div class="category">{{i.name}} <category>({{i.category.name}})</category></div> 
+			<br>
+		{% endfor %}
+	</div>	
+{%endblock%}

@@ -1,0 +1,9 @@
+<!-- GOOGLE PLUS SIGN IN-->
+<div class="username">{{username}}</div>
+<div class="logout_button"><button id="logout_button">Log Out</button> </div>
+<div id="result"></div>
+<script>    
+    document.getElementById("logout_button").onclick = function () {
+        window.location.href = "{{url_for('gdisconnect')}}";
+    }
+</script>

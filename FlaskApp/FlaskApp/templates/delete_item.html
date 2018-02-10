@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row col-md-12">
+	<h2>Delete Item</h2>
+	<form method="post">
+        Are you sure you want to delete "{{item_name}}" ?
+        <br>
+        <input type="hidden" value="{{item_name}}" name="pitem_name">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}		 
+			
+
+	

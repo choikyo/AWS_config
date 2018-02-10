@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row col-md-12 content">
+     <h3>{{item.name}}</h3>
+     <div class="description">{{item.description}}</div>
+     {% if username != None and item.created_by == username: %}
+          <br>
+          <div><a href="{{url_for('EditItemForm', item_name=item.name)}}">Edit</a></div>
+          <div><a href="{{url_for('DeleteItem', item_name=item.name)}}">Delete</a></div>
+     {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<header>
+	<div class="row nev">
+		<div class="col-md-3 name-title">
+			<h1>Item Catalog</h1>
+		</div>
+		<div class="col-md-6 "></div>
+        <div class="col-md-3 login_button">
+            <p>
+				
+                {% if username == None: %}
+					{% include "login.html" %}
+				{% else %}
+					{% include "logout.html" %}
+				{% endif%}
+			</p>
+		</div>
+</header>

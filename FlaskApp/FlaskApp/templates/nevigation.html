@@ -1,0 +1,7 @@
+<div class="row col-md-3 nevigation">
+<h3 >Category List</h3>
+{% for i in category %}					
+	<div class="category"><a href="{{url_for('CategoryItemList', category_name = i.name)}}">{{i.name}}</a></div>
+	<br>
+{% endfor %}
+</div>

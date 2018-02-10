@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block nevigation%}
+	{% include "nevigation.html" %}
+{% endblock%}
+
+{% block content%}
+    <div class="row col-md-9 content">
+    <h3 >{{category_name}} Items ({{count_str}})</h3>	
+		{% for i in item %}			
+			<div class="category"><a href="{{url_for('ShowItemDesc', category_name = i.category.name, item_name = i.name)}}">{{i.name}}</a></div> 
+			<br>
+		{% endfor %}
+    </div>        
+{% endblock%}

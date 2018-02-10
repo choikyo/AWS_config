@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row col-md-12">
+	<h2>Edit Item</h2>
+		<form method="post" action="{{url_for('EditItemForm',item_name=item.name)}}">
+            Item Name:
+            <br>
+            <input type="text" name="itemname" value="{{item.name}}">
+            <br>
+            Item Description:
+            <br>
+            <textarea type="text" name="itemdescription">{{item.description}}</textarea>
+            <br>
+            Category
+			<br>	
+            <select name="categoryid">
+				{% for i in category %}
+					<option value="{{i.id}}"
+                            {% if i.id==item.category_id: %}
+                                selected
+                            {% endif %}
+                    >{{i.name}}</option>
+				{% endfor %}
+			</select>
+			<br><br>
+			<input type="Submit" value="Update" >
+        </form>
+</div>
+{% endblock %}		 
+			
+
+	

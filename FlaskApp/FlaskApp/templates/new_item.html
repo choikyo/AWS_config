@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row col-md-12">
+	<h2>Add an item</h2>
+		<form method="post" action="{{url_for('AddItemForm')}}" >
+            Item Name:
+            <br>
+            <input type="text" name="itemname">
+            <br>
+            Item Description:
+            <br>
+            <textarea type="text" name="itemdescription">
+            </textarea>
+            <br>
+			Category
+			<br>			
+			<select name="categoryid">
+				{% for i in category %}
+					<option value="{{i.id}}">{{i.name}}</option>
+				{% endfor %}
+			</select>
+			<br><br>
+			<input type="Submit" value="Add new item" >
+        </form>
+</div>
+{% endblock %}		 
+			
+
+	
